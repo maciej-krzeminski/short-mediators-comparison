@@ -1,6 +1,6 @@
 ﻿using BaseApp.DataAccess;
 using BaseApp.Models;
-using MediatR;
+using Mediator;
 
 namespace BaseApp.Command
 {
@@ -13,9 +13,11 @@ namespace BaseApp.Command
             _forecastsRepository = forecastsRepository;
         }
 
-        public async Task Handle(AddHistoricalForecastCommand request, CancellationToken cancellationToken)
+        public async ValueTask<Unit> Handle(AddHistoricalForecastCommand request, CancellationToken cancellationToken)
         {
             await _forecastsRepository.AddAsync(request.NewHistoricalForecast).ConfigureAwait(false);
+            
+            return Unit.Value;
         }
     }
 }

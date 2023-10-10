@@ -12,7 +12,7 @@ namespace BaseApp
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblies(typeof(Program).Assembly));
+            builder.Services.AddMediator();
             builder.Services.AddTransient<IRepository<WeatherForecast>, WeatherForecastRepository>();
 
             var app = builder.Build();

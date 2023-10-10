@@ -1,5 +1,5 @@
 ﻿using BaseApp.Models;
-using MediatR;
+using Mediator;
 
 namespace BaseApp.Query
 {

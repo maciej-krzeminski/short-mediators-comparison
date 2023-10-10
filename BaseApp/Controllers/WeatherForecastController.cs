@@ -2,7 +2,7 @@ using BaseApp.Command;
 using BaseApp.DataAccess;
 using BaseApp.Models;
 using BaseApp.Query;
-using MediatR;
+using Mediator;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SystemFile = System.IO.File;

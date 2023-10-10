@@ -1,6 +1,6 @@
 ﻿using BaseApp.DataAccess;
 using BaseApp.Models;
-using MediatR;
+using Mediator;
 
 namespace BaseApp.Query
 {
@@ -13,7 +13,7 @@ namespace BaseApp.Query
             _forecastsRepository = forecastsRepository;
         }
 
-        public async Task<IEnumerable<WeatherForecast>> Handle(GetForecastQuery request, CancellationToken cancellationToken)
+        public async ValueTask<IEnumerable<WeatherForecast>> Handle(GetForecastQuery request, CancellationToken cancellationToken)
         {
             return await _forecastsRepository.GetAllAsync().ConfigureAwait(false);
         }
